@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+      #container {
+        width: 970px;
+      }
+      header {
+        width: 100%;
+        height: 72px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #header_left {
+        width: 360px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      #header_left img {
+        width: 80px;
+        height: 27px;
+      }
+      #header_left ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+      }
+      #header_left ul li {
+        list-style: none;
+        font-weight: bold;
+      }
+      #header_center {
+        width: 280px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      #search {
+        width: 280px;
+        height: 40px;
+        background-color: #f4f4f4;
+        display: flex;
+        align-items: center;
+        border-radius: 6px;
+        padding-left: 10px;
+        gap: 10px;
+      }
+      #search input {
+        width: 224px;
+        height: 96%;
+        border: none;
+        background-color: #f4f4f4;
+      }
+      #search input:focus {
+        outline: none;
+      }
+      #header_right {
+        width: 200px;
+        height: 100%;
+      }
+      #profile {
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+      }
+      #header_right ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        padding: 0;
+      }
+      #header_right ul li {
+        display: flex;
+        align-items: center;
+      }
+      #content1 {
+        height: 500px;
+        width: 100%;
+      }
+      #banner {
+        height: 280px;
+        display: flex;
+        align-items: center;
+      }
+      #banner img {
+        border-radius: 8px;
+      }
+      #content1 ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 150px;
+        padding: 0;
+      }
+      #content1 ul li {
+        width: 80px;
+        height: 96px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: bold;
+        gap: 3px;
+      }
+      #content1 ul li img {
+        width: 52px;
+        height: 52px;
+      }
+      #content2 {
+      }
+      #p1 {
+        width: 100%;
+        height: 36px;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        letter-spacing: normal;
+        font-weight: bold;
+        color: #323232;
+        margin-bottom: 4px;
+      }
+      #p2 {
+        width: 100%;
+        height: 21px;
+        color: #737373;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+      #box_container {
+        display: flex;
+        width: 100%;
+        height: 310px;
+        justify-content: space-around;
+      }
+      .box {
+        border: 1px solid black;
+        width: 180px;
+        height: 230px;
+        border-radius: 8px;
+      }
+      #top {
+        width: 100%;
+        height: 120px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      #service-name {
+        width: 150px;
+        height: 24px;
+        border: 1px solid black;
+        color: #323232;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      #bottom-wrap {
+        padding: 12px 14px;
+      }
+      #icon-wrap {
+        display: flex;
+        border: 1px solid red;
+        color: #737373;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 35px;
+        gap: 3px;
+      }
+      #icon {
+        width: 16px;
+        height: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div id="header_left">
+          <img
+            src="https://assets.cdn.soomgo.com/icons/icon-navi-logo.svg"
+            alt="숨고 로고"
+          />
+          <ul>
+            <li>견적요청</li>
+            <li>고수찾기</li>
+            <li>마켓</li>
+            <li>커뮤니티</li>
+          </ul>
+        </div>
+        <div id="header_center">
+          <div id="search">
+            <img
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIvPgogICAgICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQgNCkiIHN0cm9rZT0iI0I1QjVCNSIgc3Ryb2tlLXdpZHRoPSIxLjYiPgogICAgICAgICAgICA8Y2lyY2xlIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGN4PSI2LjUiIGN5PSI2LjUiIHI9IjYuNSIvPgogICAgICAgICAgICA8cGF0aCBzdHJva2UtbGluZWNhcD0icm91bmQiIGQ9Im0xMS41IDExLjUgNSA1Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K"
+              alt="검색 아이콘"
+              width="24px"
+              height="24px"
+            />
+            <input type="text" placeholder="어떤 서비스가 필요하세요?" />
+          </div>
+        </div>
+        <div id="header_right">
+          <ul>
+            <li>받은견적</li>
+            <li>채팅</li>
+            <li>
+              <img
+                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+OEUwOTAwNEYtQTVEOC00Mzk0LTk0M0UtRDczM0VEOENGOTA5PC90aXRsZT4KICAgIDxnIGlkPSJbaGVyZV0tU29vbWdvLUhvbWUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLsm7nqs7XthrUvaGVhZGVyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTg0My4wMDAwMDAsIC0xNjk2LjAwMDAwMCkiPgogICAgICAgICAgICA8ZyBpZD0ibmF2aWdhdGlvbi93ZWIvbmF2aWdhdGlvbl9wcm92aWRlciIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODc3LjAwMDAwMCwgMTY3Mi4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJpY29uX25hdmlfbm90aWZpY2F0aW9ucyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTY2LjAwMDAwMCwgMjQuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgaWQ9InBhdGgiIHg9IjAiIHk9IjAiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PC9yZWN0PgogICAgICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cC0yIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0LjAwMDAwMCwgMy4wMDAwMDApIiBzdHJva2U9IiMyRDJEMkQiIHN0cm9rZS13aWR0aD0iMS41Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTUsMTQuNSBDNSwxNi4xNTY4NTQyIDYuMzQzMTQ1NzUsMTcuNSA4LDE3LjUgQzkuNjU2ODU0MjUsMTcuNSAxMSwxNi4xNTY4NTQyIDExLDE0LjUiIGlkPSJQYXRoIj48L3BhdGg+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0yLDYgQzIsMi42ODYyOTE1IDQuNjg2MjkxNSw2LjA4NzE4Mzc2ZS0xNiA4LDAgQzExLjMxMzcwODUsLTYuMDg3MTgzNzZlLTE2IDE0LDIuNjg2MjkxNSAxNCw2IEwxNCwxMCBMMTYsMTQgTDAsMTQgTDIsMTAgTDIsNiBaIiBpZD0iQ29tYmluZWQtU2hhcGUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
+                alt="알림"
+                width="24px"
+                height="24px"
+              />
+            </li>
+            <li>
+              <div id="profile"></div>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <section id="content1">
+        <div id="banner">
+          <img
+            src="https://static.cdn.soomgo.com/upload/main-banner/33417a31-4325-422f-96e1-14dffe8db5e5.png?webp=1"
+            alt="여름 준비도 숨고에서 한 번에"
+            width="100%"
+            height="260px"
+          />
+        </div>
+        <ul>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/lesson.svg"
+              alt="레슨"
+              class="category-img"
+            />
+            <div>레슨</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/home-living.svg"
+              alt="홈/리빙"
+              class="category-img"
+            />
+            <div>홈/리빙</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/event.svg"
+              alt="이벤트"
+              class="category-img"
+            />
+            <div>이벤트</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/business.svg"
+              alt="비즈니스"
+              class="category-img"
+            />
+            <div>비즈니스</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/design-development.svg"
+              alt="디자인/개발"
+              class="category-img"
+            />
+            <div>디자인/개발</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/health-beauty.svg"
+              alt="건강/미용"
+              class="category-img"
+            />
+            <div>건강/미용</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/part-time-job.svg"
+              alt="알바"
+              class="category-img"
+            />
+            <div>알바</div>
+          </li>
+          <li>
+            <img
+              data-v-2ad54162=""
+              src="https://assets.cdn.soomgo.com/icons/category1/etc.svg"
+              alt="기타"
+              class="category-img"
+            />
+            <div>기타</div>
+          </li>
+        </ul>
+      </section>
+      <section id="content2">
+        <div id="p1">김세연님! 이 서비스는 어떠세요?</div>
+        <div id="p2">'프로그래밍/코딩 레슨' 요청과 연관된 서비스예요</div>
+        <div id="box_container">
+          <div class="box">
+            <img
+              alt="데이터 분석 레슨"
+              src="https://static.cdn.soomgo.com/upload/service/featured_service_d8223271-d95d-4711-8eb8-c8aa120d2f6e.png?webp=1"
+              id="top"
+            />
+            <div id="bottom-wrap">
+              <div id="service-name">데이터 분석 레슨</div>
+              <div id="icon-wrap">
+                <img
+                  src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTRweCIgaGVpZ2h0PSIxNHB4IiB2aWV3Qm94PSIwIDAgMTQgMTQiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+MzMwM0EwREMtQjlDNS00RURBLUJEOEQtQ0E4NTc0NENFQjcyPC90aXRsZT4KICAgIDxnIGlkPSJbVVNTLTc3NV0t6rOg6rCd7J2ALeyIqOqzoC3rqZTsnbgt7KCR7IaNLeyLnC3rs4Dqsr3rkJwt7LaU7LKcLeyEnOu5hOyKpC3roZzsp4HsnYQt7ZmV7J247ZWgLeyImC3snojri6QiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSLrqqjsm7kv66mU7J24X+yXsOq0gOyEnOu5hOyKpFVJ6rCc7ISgW+qzoOqwnV0iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yOC4wMDAwMDAsIC03MTIuMDAwMDAwKSIgZmlsbD0iI0I1QjVCNSIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPGcgaWQ9Imljb25fcGVyc29uX2ZpbGwiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI4LjAwMDAwMCwgNzEyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgb3BhY2l0eT0iMCIgeD0iMCIgeT0iMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0Ij48L3JlY3Q+CiAgICAgICAgICAgICAgICA8ZyBpZD0iR3JvdXAtNiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMi4zMDAyOTMsIDIuMDQxNjY3KSI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTQuNzAyMTU2NjYsNC41NzY4OTE2NyBDNS45NjYwNjQ5OSw0LjU3Njg5MTY3IDYuOTkwNjMxNjYsMy41NTIzMDE2NyA2Ljk5MDYzMTY2LDIuMjg4NDM0MTcgQzYuOTkwNjMxNjYsMS4wMjQ1NjY2NyA1Ljk2NjA2NDk5LDAgNC43MDIxNTY2NiwwIEMzLjQzODMxMjQ5LDAgMi40MTM3NDU4MiwxLjAyNDU2NjY3IDIuNDEzNzQ1ODIsMi4yODg0MzQxNyBDMi40MTM3NDU4MiwzLjU1MjMwMTY3IDMuNDM4MzEyNDksNC41NzY4OTE2NyA0LjcwMjE1NjY2LDQuNTc2ODkxNjcgWiIgaWQ9IlBhdGgiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNNC41OTY1NzMzMiw1LjMzOTYgQzIuNjU1MDE4MzIsNS4zMzk2IDAuODk1MDI1ODI1LDYuNDgxNDc1IDAuMTAzODIxNjU4LDguMjU0NTE2NjcgQy0wLjI0NDY4NTAwOCw5LjAzNTU0MTY3IDAuMzI2ODY0OTkyLDkuOTE2NDMzMzMgMS4xODIwODk5OSw5LjkxNjQzMzMzIEw4LjIxNzMyMzMyLDkuOTE2NDMzMzMgQzkuMDcyNTQ4MzIsOS45MTY0MzMzMyA5LjY0NDA5ODMyLDkuMDM1NTQxNjcgOS4yOTU2MTQ5OSw4LjI1NDUxNjY3IEM4LjUwNDM4MTY2LDYuNDgxNDc1IDYuNzQ0NDA2NjYsNS4zMzk2IDQuODAyODM5OTksNS4zMzk2IEw0LjU5NjU3MzMyLDUuMzM5NiBaIiBpZD0iUGF0aCI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4="
+                  alt="아이콘"
+                  id="icon"
+                />
+                <div>10,025명 요청</div>
+              </div>
+            </div>
+          </div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
